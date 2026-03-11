@@ -24,35 +24,56 @@
         <section class="section">
           <h2>Quick Start</h2>
           <ol>
-            <li>Download <strong>manifest.xml</strong> and sideload it in Microsoft Word.</li>
-            <li>Open <strong>demo.docx</strong> in Word Desktop or Word on the web.</li>
-            <li>Launch the add-in, run a scan, and apply suggested redactions.</li>
-          </ol>
-        </section>
-
-        <section class="section">
-          <h2>Install in Word Desktop (Windows/Mac)</h2>
-          <ol>
-            <li>Open Microsoft Word.</li>
-            <li>Go to <strong>Home</strong> or <strong>Insert</strong>, then click <strong>Add-ins</strong> or <strong>Get Add-ins</strong>.</li>
-            <li>Open the <strong>My Add-ins</strong> tab.</li>
-            <li>Select <strong>Upload My Add-in</strong> (in some versions: <strong>My Add-ins &gt; Manage My Add-ins &gt; Upload</strong>).</li>
-            <li>Choose the <strong>manifest.xml</strong> file downloaded from this demo page.</li>
-            <li>Click <strong>Upload</strong>.</li>
-            <li>If successful, you will see the <strong>RuleSentry</strong> tab/button on the Ribbon.</li>
-            <li>Click a button such as <strong>Scan Document</strong> to open the Task Pane.</li>
+            <li>Download <strong>manifest.xml</strong> and <strong>demo.docx</strong>.</li>
+            <li>Open <a href="https://www.office.com/" target="_blank" rel="noopener noreferrer"><strong>Word on the web (office.com)</strong></a> and upload/open <strong>demo.docx</strong>.</li>
+            <li>Go to <strong>Insert &gt; Add-ins &gt; My Add-ins</strong>, then upload <strong>manifest.xml</strong>.</li>
+            <li>Launch RuleSentry, run a scan, and apply suggested redactions.</li>
           </ol>
         </section>
 
         <section class="section">
           <h2>Install in Word on the web</h2>
           <ol>
-            <li>Open Word Online and open a document.</li>
+            <li>Open <a href="https://www.office.com/" target="_blank" rel="noopener noreferrer">Word Online (office.com)</a> and open a document.</li>
             <li>Go to <strong>Insert &gt; Add-ins &gt; My Add-ins</strong>.</li>
             <li>Select <strong>Upload My Add-in</strong>.</li>
             <li>Choose <strong>manifest.xml</strong>.</li>
             <li>Click <strong>Add</strong>, then launch it from <strong>My Add-ins</strong> or the Ribbon.</li>
           </ol>
+        </section>
+
+        <section class="section">
+          <h2>How to Use RuleSentry (Step by Step)</h2>
+
+          <div class="step">
+            <h3>Step 1: Open Your Document</h3>
+            <p>Open your sample document in Word. Confirm the <strong>RuleSentry</strong> tab appears on the ribbon.</p>
+            <img class="screenshot" src="./SC1.PNG" alt="RuleSentry tab visible in Word with sample sensitive data document." />
+          </div>
+
+          <div class="step">
+            <h3>Step 2: Open the Task Pane</h3>
+            <p>Click <strong>Scan Document</strong> (or another RuleSentry button) to open the RuleSentry task pane on the right side.</p>
+            <img class="screenshot" src="./SC2.PNG" alt="RuleSentry task pane opened in Word with scan controls." />
+          </div>
+
+          <div class="step">
+            <h3>Step 3: Run a Scan</h3>
+            <p>Click <strong>Scan Document</strong>. RuleSentry detects sensitive values and lists findings in <strong>Detections</strong>.</p>
+            <img class="screenshot" src="./SC3.PNG" alt="Scan results showing multiple detections in the RuleSentry pane." />
+          </div>
+
+          <div class="step">
+            <h3>Step 4: Preview Redactions</h3>
+            <p>Select a transform option (for example <strong>Mask last 4</strong>), then click <strong>Preview Changes</strong> to review original vs transformed values.</p>
+            <img class="screenshot screenshot-narrow" src="./SC4.PNG" alt="Transform preview with before and after masked values." />
+          </div>
+
+          <div class="step">
+            <h3>Step 5: Apply to Document</h3>
+            <p>Click <strong>Apply to Document</strong> to insert redactions into the document. Review tracked changes and accept or reject as needed.</p>
+            <img class="screenshot" src="./SC5.PNG" alt="Document updated with redacted values and tracked changes in Word." />
+          </div>
         </section>
       </section>
     </main>
