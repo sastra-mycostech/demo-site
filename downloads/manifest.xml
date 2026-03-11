@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>d64113d1-770c-4618-85dd-79400bd138eb</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="RuleSentry"/>
+  <Description DefaultValue="RuleSentry Office Add-on for Word"/>
+  <IconUrl DefaultValue="https://word-addin-host.vercel.app/assets/check_circle_32dp.png"/>
+  <HighResolutionIconUrl DefaultValue="https://word-addin-host.vercel.app/assets/check_circle_80dp.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://word-addin-host.vercel.app</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://word-addin-host.vercel.app/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="TabRuleSentry">
+              <Group id="RuleSentryGroupDetect">
+                <Label resid="DetectGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="ScanDocumentButton">
+                  <Label resid="ScanButton.Label"/>
+                  <Supertip>
+                    <Title resid="ScanButton.Label"/>
+                    <Description resid="ScanButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Scan.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="RuleSentryGroupAIChat">
+                <Label resid="AIChatGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.AI.16x16"/>
+                  <bt:Image size="32" resid="Icon.AI.32x32"/>
+                  <bt:Image size="80" resid="Icon.AI.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="AskAIButton">
+                  <Label resid="AIButton.Label"/>
+                  <Supertip>
+                    <Title resid="AIButton.Label"/>
+                    <Description resid="AIButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.AI.16x16"/>
+                    <bt:Image size="32" resid="Icon.AI.32x32"/>
+                    <bt:Image size="80" resid="Icon.AI.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.AI.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="RuleSentryGroupTaskPane">
+                <Label resid="TaskPaneGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.Panel.16x16"/>
+                  <bt:Image size="32" resid="Icon.Panel.32x32"/>
+                  <bt:Image size="80" resid="Icon.Panel.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="PrivacyPanelButton">
+                  <Label resid="PanelButton.Label"/>
+                  <Supertip>
+                    <Title resid="PanelButton.Label"/>
+                    <Description resid="PanelButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Panel.16x16"/>
+                    <bt:Image size="32" resid="Icon.Panel.32x32"/>
+                    <bt:Image size="80" resid="Icon.Panel.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Settings.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="RuleSentryGroupStatus">
+                <Label resid="StatusGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.Settings.16x16"/>
+                  <bt:Image size="32" resid="Icon.Settings.32x32"/>
+                  <bt:Image size="80" resid="Icon.Settings.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="StatusButton">
+                  <Label resid="StatusButton.Label"/>
+                  <Supertip>
+                    <Title resid="StatusButton.Label"/>
+                    <Description resid="StatusButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Settings.16x16"/>
+                    <bt:Image size="32" resid="Icon.Settings.32x32"/>
+                    <bt:Image size="80" resid="Icon.Settings.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Panel.Url"/>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="PolicyButton">
+                  <Label resid="PolicyButton.Label"/>
+                  <Supertip>
+                    <Title resid="PolicyButton.Label"/>
+                    <Description resid="PolicyButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                     <bt:Image size="16" resid="Icon.Settings.16x16"/>
+                    <bt:Image size="32" resid="Icon.Settings.32x32"/>
+                    <bt:Image size="80" resid="Icon.Settings.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Settings.Url"/>
+                  </Action>
+                </Control>
+                 <Control xsi:type="Button" id="EngineButton">
+                  <Label resid="EngineButton.Label"/>
+                  <Supertip>
+                    <Title resid="EngineButton.Label"/>
+                    <Description resid="EngineButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.Settings.16x16"/>
+                    <bt:Image size="32" resid="Icon.Settings.32x32"/>
+                    <bt:Image size="80" resid="Icon.Settings.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RuleSentryTaskPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Settings.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="TabRuleSentry.Label"/>
+
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://word-addin-host.vercel.app/assets/Find_PixelPerfect_16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://word-addin-host.vercel.app/assets/Find_PixelPerfect_32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://word-addin-host.vercel.app/assets/Find_PixelPerfect_80.png"/>
+        <bt:Image id="Icon.AI.16x16" DefaultValue="https://word-addin-host.vercel.app/assets/AI_PixelPerfect_16.png"/>
+        <bt:Image id="Icon.AI.32x32" DefaultValue="https://word-addin-host.vercel.app/assets/AI_PixelPerfect_32.png"/>
+        <bt:Image id="Icon.AI.80x80" DefaultValue="https://word-addin-host.vercel.app/assets/AI_PixelPerfect_80.png"/>
+        <bt:Image id="Icon.Panel.16x16" DefaultValue="https://word-addin-host.vercel.app/assets/Panel_PixelPerfect_16.png"/>
+        <bt:Image id="Icon.Panel.32x32" DefaultValue="https://word-addin-host.vercel.app/assets/Panel_PixelPerfect_32.png"/>
+        <bt:Image id="Icon.Panel.80x80" DefaultValue="https://word-addin-host.vercel.app/assets/Panel_PixelPerfect_80.png"/>
+        <bt:Image id="Icon.Settings.16x16" DefaultValue="https://word-addin-host.vercel.app/assets/Status_PixelPerfect_16.png"/>
+        <bt:Image id="Icon.Settings.32x32" DefaultValue="https://word-addin-host.vercel.app/assets/Status_PixelPerfect_32.png"/>
+        <bt:Image id="Icon.Settings.80x80" DefaultValue="https://word-addin-host.vercel.app/assets/Status_PixelPerfect_80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://word-addin-host.vercel.app/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html"/>
+        <bt:Url id="Taskpane.Scan.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html?view=scan"/>
+        <bt:Url id="Taskpane.AI.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html?view=ai"/>
+        <bt:Url id="Taskpane.Panel.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html?view=settings"/>
+        <bt:Url id="Taskpane.Status.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html?view=status"/>
+        <bt:Url id="Taskpane.Settings.Url" DefaultValue="https://word-addin-host.vercel.app/taskpane.html?view=settings"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with RuleSentry!"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
+        <bt:String id="TabRuleSentry.Label" DefaultValue="RuleSentry"/>
+        
+        <bt:String id="DetectGroup.Label" DefaultValue="Detect"/>
+        <bt:String id="AIChatGroup.Label" DefaultValue="AI Chat"/>
+        <bt:String id="TaskPaneGroup.Label" DefaultValue="Task Pane"/>
+        <bt:String id="StatusGroup.Label" DefaultValue="Status"/>
+        <bt:String id="ScanButton.Label" DefaultValue="Scan Document"/>
+        <bt:String id="AIButton.Label" DefaultValue="Ask AI Safely"/>
+        <bt:String id="PanelButton.Label" DefaultValue="Settings"/>
+        <bt:String id="StatusButton.Label" DefaultValue="Status: Active"/>
+        <bt:String id="PolicyButton.Label" DefaultValue="Policy: PII Basic"/>
+        <bt:String id="EngineButton.Label" DefaultValue="Engine: WASM"/>
+        
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="RuleSentry loaded. Click 'Show Task Pane' to start."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Task Pane"/>
+        <bt:String id="ScanButton.Tooltip" DefaultValue="Scan document for sensitive content"/>
+        <bt:String id="AIButton.Tooltip" DefaultValue="Safely ask AI questions"/>
+        <bt:String id="PanelButton.Tooltip" DefaultValue="Open settings"/>
+        <bt:String id="StatusButton.Tooltip" DefaultValue="Toggle task pane open/close"/>
+        <bt:String id="PolicyButton.Tooltip" DefaultValue="Current Security Policy"/>
+        <bt:String id="EngineButton.Tooltip" DefaultValue="Active Scanning Engine"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
